@@ -9,6 +9,6 @@ namespace SimpleImageGallery.Data.Models
     public class Category
     {
         public int Id { get; set; }
-        public string CatDescription { get; set; }
+        public string CatDescription { get; set; } = "NA";
     }
 }

@@ -4,7 +4,7 @@ namespace Zedhi.Models
 {
     public class GalleryIndexModel
     {
-        public IEnumerable<GalleryImage>? Images { get; set; }
-        public string SearchQuery  { get; set; }=string.Empty;  
+        public IEnumerable<GalleryImage> Images { get; set; }=new List<GalleryImage>();
+        public string SearchQuery { get; set; } = "NA";
     }
 }

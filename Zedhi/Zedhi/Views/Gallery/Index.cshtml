@@ -1,0 +1,729 @@
+﻿@model Zedhi.Models.GalleryIndexModel
+
+@*@{
+    var titles = "Page Views";
+    var imageLink = "https://images.pexels.com/photos/3869651/pexels-photo-3869651.jpeg";
+    var someText = "This is the future. Brace for it";
+}**@
+
+<!DOCTYPE html>
+<html lang="en">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@*@titles*@</title>
+    <link rel="stylesheet" href="assets/css/style-freedom.css">
+</head>
+
+<body class="no-scroll">
+<script src='../../../../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+
+
+</script>
+    <!-- header -->
+    <div class="w3l-headers-9">
+        <header>
+            <div class="wrapper">
+                <div class="header">
+                    <div class="right-img-9">
+                        <h1>
+                            <a href="#" class="logo"><span class="fa fa-bullhorn"
+                                    aria-hidden="true"></span>ZedhiLuxury</a>
+                                  <!-- if logo is image enable this   
+          <a class="logo" href="index.html">
+            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+          </a> -->
+                                </h1>
+                                </div>
+                               
+                    <div class="bottom-menu-content">
+                        <input type="checkbox" id="nav" />
+                        <label for="nav" class="menu-bar"></label>
+                        <nav>
+                            <div class="wrapper">
+                                <ul class="menu">
+                                    <li><a href="#" class="link-nav">Home</a></li>
+                                    <li><a href="products.html" >Products </a></li>
+                                    <li>
+                                        <!-- First Tier Drop Down -->
+                                        <label for="drop-2" class="toggle toogle-2">Pages <span class="fa fa-angle-down"
+                                                aria-hidden="true"></span></label>
+                                        <a href="#pages" class="link-nav dropdown-toggle">About us <span>
+                                                </span></a>
+                                        <input type="checkbox" id="drop-2" />
+                                        
+                                    </li>
+                                  <li><a href="#" class="link-nav">Contact</a></li>
+                                   </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+        <script src="~/assets/js/jquery-3.3.1.min.js"></script>
+        <script>
+            $('#nav').change(function () {
+                if ($('#nav').is(":checked")) {
+                    $('body').css('overflow', 'hidden');
+                } else {
+                    $('body').css('overflow', 'auto');
+                }
+            });
+        </script>
+    </div>
+    <!-- banner -->
+    <section class="w3l-banner-3-main">
+        <div class="banner-3">
+            <div class="wrapper">
+                <div class="cover-top-center-9">
+                    <div class="w3ls_cover_txt-9">
+                        <h3 class="title-cover-9">@*@someText*@</h3>
+                        <p class="para-cover-9">Complimentary Texts here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //banner -->
+   <!-- category section -->
+    <section class="w3l-category-main">
+        <div class="categories-sec">
+            <div class="wrapper">
+                <h3 class="title-main">Popular Categories</h3>
+                <div class="right-models text-center">
+                    <div class="d-grid grid-sec">
+                        <a href="product-2.html">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span class="fa fa-bed"></span>
+                                    <h5 class="card-title mt-4">Furniture </h5>
+                                    <p class="para-design">6 Ads Posted</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="product-3.html">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span class="fa fa-briefcase"></span>
+                                    <h5 class="card-title mt-4">Jobs</h5>
+                                    <p class="para-design">5 Ads Posted</p>
+                                </div>
+                            </div>
+
+                        </a>
+                        <a href="product-5.html">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span class="fa fa-futbol-o"></span>
+                                    <h5 class="card-title mt-4">Sports</h5>
+                                    <p class="para-design">6 Ads Posted</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="product-4.html">
+                            <div class="card">
+                                <div class="card-body">
+                                    <span class="fa fa-home"></span>
+                                    <h5 class="card-title mt-4">Real Estate</h5>
+                                    <p class="para-design">6 Ads</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+    <!-- //category section -->
+    <!-- Products4 block -->
+    <div class="w3l-products-4">
+        <div id="products4-block" class="text-center">
+            <div class="wrapper">
+                <input id="tab1" type="radio" name="tabs" checked>
+                <label class="tabtle" for="tab1">Shortlets</label>
+
+                <input id="tab2" type="radio" name="tabs">
+                <label class="tabtle" for="tab2">Apartments</label>
+
+                <input id="tab3" type="radio" name="tabs">
+                <label class="tabtle" for="tab3">Promo</label>
+                
+                <section id="content1" class="tab-content text-left">
+                    <div class="d-grid grid-col-3">
+                    @foreach (var item in Model.Images)
+                         {
+                        <div class="product">
+                            <a href="productsingle.html"><img src="@item.Url" class="img-responsive"
+                                    alt="" width="640" height="426"/></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">Title 1</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> Category 1</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                       @* <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/c2.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr2</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 299(2)</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/c3.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr3</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 499(3)</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>*@
+                            }
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/pf3.jpg" class="img-responsive"
+                                    alt=""/></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr4</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 800(4)</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/c5.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr 5</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 1300(5)</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/pb1.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr 6</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 2,500(6)</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="content2" class="tab-content text-left">
+                    <div class="d-grid grid-col-3">
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/c4.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 1200</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/c6.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 299</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/pr4.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 499</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/ps4.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 800</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/c3.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 499</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="content3" class="tab-content text-left">
+                    <div class="d-grid grid-col-3">
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/ps6.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 1200</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/pr6.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 299</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/pj4.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 499</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <a href="productsingle.html"><img src="assets/images/c5.jpg" class="img-responsive"
+                                    alt="" /></a>
+                            <div class="info-bg">
+                                <h5><a href="productsingle.html">short Descr</a></h5>
+                                <p>CategoryName</p>
+                                <ul class="d-flex">
+                                    <li><span class=""></span> 1300</li>
+                                    <li class="margin-effe"><a href="#fav" title="Add this to Favorite"><span
+                                                class="fa fa-heart-o"></span></a></li>
+                                    <li><a href="#sahre" title="Share"><span class="fa fa-share"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- //Products4 block -->
+    <!-- grid -->
+    <section class="w3l-grids-9-main">
+        <div class="grid-top-9">
+            <div class="wrapper">
+                <h3 class="title-main">Popular Locations</h3>
+                <div class="d-grid grid-col-3 grid-element-9 margin-bottom">
+                    <div class="left-grid-ele-9 grid-bg3">
+                        <div class="sub-wid-grid-9">
+                            <h4 class="text-grid-9"><a href="productsingle.html">London</a></h4>
+                            <p class="sub-para">Sed ut perspi</p>
+                        </div>
+                    </div>
+                    <div class="left-grid-ele-9 grid-bg4">
+                        <div class="sub-wid-grid-9">
+                            <h4 class="text-grid-9"><a href="productsingle.html">Japan</a></h4>
+                            <p class="sub-para">Sed ut perspi</p>
+                        </div>
+                    </div>
+                    <div class="left-grid-ele-9 grid-bg5">
+                        <div class="sub-wid-grid-9">
+                            <h4 class="text-grid-9"><a href="productsingle.html">France</a></h4>
+                            <p class="sub-para">Sed ut perspi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid grid-col-2 grid-element-9">
+                    <div class="left-grid-ele-9 grid-bg1">
+                        <div class="sub-wid-grid-9">
+                            <h4 class="text-grid-9"><a href="productsingle.html">New Jersy</a></h4>
+                            <p class="sub-para">Sed ut perspi</p>
+                        </div>
+                    </div>
+                    <div class="left-grid-ele-9 grid-bg2">
+                        <div class="sub-wid-grid-9">
+                            <h4 class="text-grid-9"><a href="productsingle.html">Paris</a></h4>
+                            <p class="sub-para">Sed ut perspi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //grid -->
+    <!-- specifications -->
+    <section class="w3l-specifications-9">
+        <div class="main-w3">
+            <div class="overlay">
+                <div class="wrapper">
+                    <div class="d-flex main-cont-wthree-fea text-center">
+                        <div class="grids-speci">
+                            <div class="stats-icon">
+                                <span class="fa fa-bullhorn" aria-hidden="true"></span>
+                            </div>
+                            <div>
+                                <h3 class="title-spe">5000+</h3>
+                                <p>Published Ads</p>
+                            </div>
+                        </div>
+                        <div class="grids-speci">
+                            <div class="stats-icon">
+                                <span class="fa fa-users" aria-hidden="true"></span>
+                            </div>
+                            <div>
+                                <h3 class="title-spe">3266+</h3>
+                                <p>Register User</p>
+                            </div>
+                        </div>
+                        <div class="grids-speci">
+                            <div class="stats-icon">
+                                <span class="fa fa-thumbs-o-up" aria-hidden="true"></span>
+                            </div>
+                            <div>
+                                <h3 class="title-spe">2240+</h3>
+                                <p>Verified Users</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //specifications -->
+    </section>
+   <!-- content-11 -->
+    <section class="w3l-content-11-main">
+        <div class="content-design-11">
+            <div class="wrapper">
+                <h3 class="title-main">Why Choose Us?</h3>
+                <div class="content-sec-11 column content-text">
+                    <div class="columns">
+                        <div class="icon-eff">
+                            <span class="fa fa-book" aria-hidden="true"></span>
+                        </div>
+                        <div class="right-side">
+                            <h4>Full Documented</h4>
+                            <p> Fusce faucibus ante vitae justo efficitur elementum. Donec ipsum faucibus.</p>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="icon-eff">
+                            <span class="fa fa-newspaper-o" aria-hidden="true"></span>
+                        </div>
+                        <div class="right-side">
+                            <h4>Awesome Layout</h4>
+                            <p> Fusce faucibus ante vitae justo efficitur elementum. Donec sed faucibus.</p>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="icon-eff">
+                            <span class="fa fa-paper-plane" aria-hidden="true"></span>
+                        </div>
+                        <div class="right-side">
+                            <h4>Clean & Modern Design</h4>
+                            <p> Suspendisse condimentum eget ligula a posuere. Duis ipsum et gravida.</p>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="icon-eff">
+                            <span class="fa fa-thumbs-up" aria-hidden="true"></span>
+                        </div>
+                        <div class="right-side">
+                            <h4>Super Support</h4>
+                            <p> Suspendisse condimentum eget ligula a posuere. Duis ipsum etarcu dffdut.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="icon-eff">
+                            <span class="fa fa-magic" aria-hidden="true"></span>
+                        </div>
+                        <div class="right-side">
+                            <h4>Great Features</h4>
+                            <p> Suspendisse condimentum eget ligula a posuere. Duis ipsum et rcu fdsut.</p>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="icon-eff">
+                            <span class="fa fa-handshake-o" aria-hidden="true"></span>
+                        </div>
+                        <div class="right-side">
+                            <h4>User Friendly</h4>
+                            <p> Fusce faucibus ante vitae justo efficitur elementum. Donec sed faucibus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //content-11 -->
+    <div class="w3l-new-block-6">
+        <!-- grids block 5 -->
+        <section id="grids5-block">
+            <div class="wrapper">
+                <h3 class="title-main">New Arrivals</h3>
+                <div class="d-grid">
+                    <div class="grids5-info">
+                        <a href="productsingle.html"><img src="assets/images/b1.jpg" alt="" /></a>
+                        <h4><a href="productsingle.html">short Descr</a></h4>
+                        <!-- <ul class=" admin-list">
+                            <li><a href="productsingle.html"><span class=" fa fa-user" aria-hidden="true"></span>by
+                                    Admin</a></li>
+                            <li><a href="productsingle.html"><span class=" fa fa-comments-o" aria-hidden="true"></span>9
+                                    Comments</a></li>
+                        </ul> -->
+                        <p>It is a long established fact that a reader will be distracted by the readable content of
+                            a page when looking at its layout</p>
+                    </div>
+                    <div class="grids5-info">
+                        <a href="productsingle.html"><img src="assets/images/b2.jpg" alt="" /></a>
+                        <h4><a href="productsingle.html">short Descr</a></h4>
+                        <!-- <ul class=" admin-list">
+                            <li><a href="productsingle.html"><span class=" fa fa-user" aria-hidden="true"></span>by
+                                    Admin</a></li>
+                            <li><a href="productsingle.html"><span class=" fa fa-comments-o" aria-hidden="true"></span>5
+                                    Comments</a></li>
+                        </ul> -->
+                        <p>It is a long established fact that a reader will be distracted by the readable content of
+                            a page when looking at its layout</p>
+                    </div>
+                    <div class="grids5-info">
+                        <a href="productsingle.html"><img src="assets/images/b4.jpg" alt="" /></a>
+                        <h4><a href="productsingle.html">short Descr</a></h4>
+                        <!-- <ul class=" admin-list">
+                            <li><a href="productsingle.html"><span class=" fa fa-user" aria-hidden="true"></span>by
+                                    Admin</a></li>
+                            <li><a href="productsingle.html"><span class=" fa fa-comments-o" aria-hidden="true"></span>12
+                                    Comments</a></li>
+                        </ul> -->
+                        <p>It is a long established fact that a reader will be distracted by the readable content of
+                            a page when looking at its layout</p>
+                    </div>
+                    <div class="grids5-info">
+                        <a href="productsingle.html"><img src="assets/images/b3.jpg" alt="" /></a>
+                        <h4><a href="productsingle.html">short Descr</a></h4>
+                        <!-- <ul class=" admin-list">
+                            <li><a href="productsingle.html"><span class=" fa fa-user" aria-hidden="true"></span>by
+                                    Admin</a></li>
+                            <li><a href="productsingle.html"><span class=" fa fa-comments-o" aria-hidden="true"></span>23
+                                    Comments</a></li>
+                        </ul> -->
+                        <p>It is a long established fact that a reader will be distracted by the readable content of
+                            a page when looking at its layout</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<footer class="w3l-footer-22">
+        <section class="fotter-sub">
+            <div class="footer">
+                <div class="wrapper">
+                    <div class="text-txt">
+                        <div class="right-side">
+                            <h4>Some Text here</h4>
+                            <p class="para-sep">Get out latest brochure for the month <a href="#download">Brochure
+                                    Now</a></p>
+                            <div class="sub-columns">
+                                <div class="sub-one-left">
+                                    <h6>About </h6>
+                                    <p>short Descr error sit voluptatem accusantium
+                                        doloremque
+                                        laudantium, totam rem aperiam, eaque ipsa quae ab.</p>
+                                    <div class="columns-2">
+                                        <ul class="social">
+                                            <li><a href="#facebook"><span class="fa fa-facebook"
+                                                        aria-hidden="true"></span></a>
+                                            </li>
+                                            <li><a href="#linkedin"><span class="fa fa-linkedin"
+                                                        aria-hidden="true"></span></a>
+                                            </li>
+                                            <li><a href="#twitter"><span class="fa fa-twitter"
+                                                        aria-hidden="true"></span></a>
+                                            </li>
+                                            <li><a href="#google"><span class="fa fa-google-plus"
+                                                        aria-hidden="true"></span></a>
+                                            </li>
+                                            <li><a href="#github"><span class="fa fa-github"
+                                                        aria-hidden="true"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sub-two-right">
+                                    <h6>Quick links</h6>
+                                    <ul>
+                                        <li><a href="index.html"><span
+                                                    class="fa fa-angle-double-right mr-2"></span>Home</a>
+                                        </li>
+                                        <li><a href="about.html"><span
+                                                    class="fa fa-angle-double-right mr-2"></span>Product</a>
+                                        </li>
+                                        <li><a href="services.html"><span
+                                                    class="fa fa-angle-double-right mr-2"></span>About us</a></li>
+                                        <li><a href="contact.html"><span
+                                                    class="fa fa-angle-double-right mr-2"></span>Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-two-right">
+                                    <h6>Help & Support</h6>
+                                    <ul>
+                                        <li><a href="index.html"><span class="fa fa-angle-double-right mr-2"></span>Live
+                                                Chart</a></li>
+                                        <li><a href="faq.html"><span
+                                                    class="fa fa-angle-double-right mr-2"></span>Faq</a>
+                                        </li>
+                                        <li><a href="#support"><span
+                                                    class="fa fa-angle-double-right mr-2"></span>Support</a></li>
+                                        <li><a href="#terms"><span class="fa fa-angle-double-right mr-2"></span>Terms
+                                                of Services</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-one-left">
+                                    <h6>Contact </h6>
+                                    <div class="column2">
+                                        <div class="href1"><span class="fa fa-envelope-o" aria-hidden="true"></span><a
+                                                href="mailto:info@example.com">info@zedhiluxury.com.ng</a>
+                                        </div>
+                                        <div class="href2"><span class="fa fa-phone" aria-hidden="true"></span><a
+                                            href="https://wa.me/2348055463341">+2348055463341</a>
+                                    </div>
+                                        <div>
+                                            <p class="contact-para"><span class="fa fa-map-marker"
+                                                    aria-hidden="true"></span>Lagos, Nigeria</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="below-section">
+                <div class="wrapper">
+                    <div class="copyright-footer">
+                        <div class="columns text-left">
+                            <p>@@2019 Classify. All rights reserved | Design by <a href="https://shiftsolutions.com.ng/">shiftsolutions</a>
+                            </p>
+                        </div>
+                        <ul class="text-right">
+                            <li><a href="#payment"><img src="assets/images/payment1.jpg" alt=""
+                                        class="img-responsive"></a>
+                            </li>
+                            <li><a href="#payment"><img src="assets/images/payment2.jpg" alt=""
+                                        class="img-responsive"></a>
+                            </li>
+                            <li><a href="#payment"><img src="assets/images/payment3.jpg" alt=""
+                                        class="img-responsive"></a>
+                            </li>
+                            <li><a href="#payment"><img src="assets/images/payment4.jpg" alt=""
+                                        class="img-responsive"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- copyright -->
+            <!-- move top -->
+            <button onclick="topFunction()" id="movetop" title="Go to top">
+                <span class="fa fa-arrow-up" aria-hidden="true"></span>
+            </button>
+            <script>
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function () {
+                    scrollFunction()
+                };
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("movetop").style.display = "block";
+                    } else {
+                        document.getElementById("movetop").style.display = "none";
+                    }
+                }
+
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
+            <!-- /move top -->
+        </section>
+    </footer>
+</body>
+</html>

@@ -9,11 +9,11 @@ namespace SimpleImageGallery.Data.Models
     public class GalleryImage 
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public DateTime DateCreated { get; set; }
-        public string   Url { get; set; }
-        public virtual IEnumerable<ImageTag> Tags { get; set; }
-        public virtual IEnumerable<Category> ImageCategory { get; set; }
+        public string Title { get; set; } = "NA";
+        public DateTime DateCreated { get; set; }= DateTime.Now;
+        public string Url { get; set; } = "NA";
+        public virtual IEnumerable<ImageTag> Tags { get; set; }= Enumerable.Empty<ImageTag>();
+        public virtual IEnumerable<Category> ImageCategory { get; set; }=Enumerable.Empty<Category>();  
 
     }
 }
