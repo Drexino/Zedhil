@@ -1,14 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using SimpleImageGallery.Data;
 using System.Configuration;
+using Zedhi.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<SimpleImageGalleryDbContext>(options =>
-//options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IImage, ImageService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
